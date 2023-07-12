@@ -1,7 +1,7 @@
 import imageLoader from "../../../imageLoader"
 import { Character, GetCharacterResults } from "../../../types"
 import Image from "next/image"
-import { GetServerSideProps } from "next"
+import { GetServerSideProps, NextPage } from "next"
 
 
 
@@ -21,7 +21,7 @@ export const getServerSideProps : GetServerSideProps = async (context) => {
 //and
 //function CharacterPage ({character} : Character){
 
-function CharacterPage ({character} : {character: Character}){
+const  CharacterPage : NextPage<{character: Character}> = ({character}) =>{
     return <div>
         <h1>{character.name}</h1>
 
